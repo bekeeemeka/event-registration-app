@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+
+        <section class="container">
+
+            <h1>Technology Event Registration</h1>
+
+            <p class="description">
+                Register below to participate in our technology event.
+            </p>
+
+            <form id="registrationForm">
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="Enter your age">
+                </div>
+
+                <div class="form-group">
+                    <label for="technology">Technology</label>
+                    <select id="technology">
+                        <option value="">-- Select Technology --</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>JavaScript</option>
+                        <option>React</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I accept the terms and conditions</label>
+                </div>
+
+                <button class="btn" type="submit">
+                    Register
+                </button>
+
+            </form>
+
+            <div id="message"></div>
+
+            <hr>
+
+            <div class="form-group">
+                <label for="search">Search Participants</label>
+                <input type="text" id="search" placeholder="Search by name or email">
+            </div>
+
+            <div class="form-group">
+                <label for="filterTechnology">Filter by Technology</label>
+
+                <select id="filterTechnology">
+                    <option value="All">All</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="React">React</option>
+                    <option value="Other">Other</option>
+                </select>
+
+            </div>
+
+            <section class="participants-section">
+
+                <h2>Registered Participants</h2>
+
+                <p>
+                    Total Participants:
+                    <strong id="participantCount">0</strong>
+                </p>
+
+                <ul id="participantList"></ul>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
