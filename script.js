@@ -39,7 +39,7 @@ form.addEventListener("submit", function (event) {
     }
 
     if (technology === "") {
-        showMessage("Please select a technology.", "error");
+        showMessage("Please select an area of interest.", "error");
         return;
     }
 
@@ -58,7 +58,10 @@ form.addEventListener("submit", function (event) {
     participants.push(participant);
     saveParticipants();
 
-    showMessage(`${fullName} has been registered for the event.`, "success");
+    showMessage(
+        `✅ Registration Successful! ${fullName} has been registered for ${technology}.`,
+        "success"
+    );
 
     form.reset();
     renderParticipants();
@@ -106,11 +109,16 @@ function renderParticipants() {
         const listItem = document.createElement("li");
 
         listItem.innerHTML = `
-            <strong>${participant.fullName}</strong><br>
-            Email: ${participant.email}<br>
-            Technology: ${participant.technology}<br>
-            Age: ${participant.age}<br><br>
-            <button onclick="deleteParticipant(${originalIndex})">Delete</button>
+            <div class="participant-card">
+                <h3>${participant.fullName}</h3>
+                <p><strong>Email:</strong> ${participant.email}</p>
+                <p><strong>Area of Interest:</strong> ${participant.technology}</p>
+                <p><strong>Age:</strong> ${participant.age}</p>
+
+                <button onclick="deleteParticipant(${originalIndex})">
+                    🗑 Delete
+                </button>
+            </div>
         `;
 
         participantList.appendChild(listItem);
